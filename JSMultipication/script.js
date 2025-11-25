@@ -1,4 +1,18 @@
 
+function multipication () {
+  let num1 = document.getElementById("number1").value
+  let result = ""
+
+  for (let i=1; i<=10; i++) {
+    console.log (`${num1} * ${i} = ${num1*i}`)
+    result = result + `${num1} * ${i} = ${num1*i} <br>`
+  }
+
+  document.getElementById("resultPara").innerHTML = "result is" + result
+
+}
+
+
 
 function generateTable () {
   num1 = document.getElementById("number1").value
