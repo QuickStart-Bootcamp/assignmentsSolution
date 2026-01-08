@@ -1,41 +1,40 @@
-class Payment {
+// getSummary(): Returns a string describing the payment (payer name, amount, and method)
+// isLargePayment(): Returns true if the amount is greater than 100, otherwise returns false
 
-  // payerName, amount, method (e.g., Credit Card, PayPal), date
+
+class Payment {
   constructor (payerName, amount, method, date) {
     this.payerName = payerName
     this.amount = amount
     this.method = method
-    this.date = date
+    this.data = date
   }
 
-  getSummary() {
-    // Returns a string describing the payment (payer name, amount, and method)
-    return `${this.payerName} paid ${this.amount} using ${this.method}`
+  getSummary () {
+    return `${this.payerName} is paying ${this.amount} using ${this.method}`
   }
 
-  isLargePayment() {
-    // let isLarge = this.method > 100 ? true : false
-    let isLarge
-    if (this.amount > 100 )
-      isLarge = "Amount is Larger than 100"
-    else
-      isLarge = "Amount is less than 100"
-
-    return isLarge
+  isLargePayment () {
+    let isLPayment
+    // if (this.amount > 100)
+    //   return "Greater than 1000 is paid"
+    // else
+    //   return "Less than a thousand paid"
+    isLPayment = (this.amount > 100) ? "true" : "false"
+    return isLPayment
   }
-
 }
 
-let payment1 = new Payment ("Mohammad", 90, "payPal", "2026/01/01")
-let payment2 = new Payment ("Chrisitian", 3000, "payPal", "2026/01/01")
-let payment3 = new Payment ("Mellisa", 5000, "payPal", "2026/01/01")
+let payment1 = new Payment ("Mohammad", 1000, "paypal", "2026/01/15")
+let payment2 = new Payment ("Melissa", 90, "credit", "2025/01/15")
+let payment3 = new Payment ("Luke", 2000, "debit", "2022/01/15")
 
-let payment = [payment1, payment2, payment3]
-
-for (let i = 0 ; i < payment.length ; i++ ) {
-  console.log (payment[i].getSummary())
+let paymentArr = [payment1, payment2, payment3]
+console.log (paymentArr.length)
+for (let i = 0 ; i < paymentArr.length ; i++) {
+  console.log (paymentArr[i].getSummary())
 }
-
-
-console.log (payment1.isLargePayment())
+// console.log (payment1.isLargePayment())
+// console.log (payment2.isLargePayment())
+// console.log (payment3.isLargePayment())
 
